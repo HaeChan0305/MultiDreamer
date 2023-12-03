@@ -1,6 +1,9 @@
 # MultiDreamer: Generating 3D mesh from a Single-view Multi-objects Image
 Code release of our paper [MultiDreamer](https://google.com). Check out our [paper](https://google.com), and [website](https://multidreamer-demo.web.app)!
 
+## Abstract
+Single-view 3D reconstruction is an actively researched field in computer vision. Many existing models utilize pretrained 2D diffusion models to generate novel views from a single-view image. However, these models face challenges with multi-object input images, struggling to extract accurate 3D positional information. In this work, we introduce MultiDreamer, a method for reconstructing a 3D scene comprising multiple objects from a single-view multi-object image. We enhance 3D mesh accuracy by independently generating meshes for individual objects, utilizing inpainting for obscured regions, and optimizing mesh alignment using the depth map. Our pipeline produces robust 3D scenes for arbitrary objects without training process. Experimental analysis results demonstrate that our pipeline consistently captures the shapes and relative positions of multiple objects compared to the baseline model.
+
 ![](images/pipeline.png)
 
 
