@@ -69,6 +69,8 @@ This is the qualitative result presented in our paper.
 
 In the evaluation part, we compared results of MultiDreamer(Ours) and SyncDreamer(Baseline). We measured Chamfer Distance, Volume IoU, and F-Score for quantitative evaluation. The code to obtain results for both models and compute the metrics is in `eval/eval.sh`. You can run : 
 ```
+$ conda env create -n eval -f ./env/eval.yaml
+$ conda activate eval
 $ cd eval
 $ bash eval.sh
 ```
