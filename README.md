@@ -41,7 +41,7 @@ MultiDreamer/models/
       └─ ViT-L-14.pt
 ```
 
-Before you run `demo.sh`, you shoud ckeck and modify the path of input image and output directory in `demo.sh`. If you need, make the `data/output` directory :
+Before you run `demo.sh`, you shoud ckeck and modify the path of input image and output directory in `demo.sh`. If you need, make the `data/output/` directory :
 ```
 INPUT_IMAGE="/MultiDreamer/data/assets/giraffe_and_flower/0_input_giraffe_and_flower.png"
 OUTPUT_DIR="/MultiDreamer/data/output/giraffe_and_flower/"
@@ -53,25 +53,14 @@ $ bash demo.sh
 
 ## Preparing Data
 ### Downloading Processed Data (Recommended)
-We provide preprocessed images and labels in this [Google Drive folder](https://drive.google.com/drive/folders/1JbPidWsfcLyUswYQsulZN8HDFBTdoQog).  Download and extract all folders to a desired location before running the training and evaluation code.
+We provide 32 examples in this [Google Drive folder](https://drive.google.com/drive/folders/1uHwu3YmJnQm5I3HqxDYCuv_NbvvDndRX). In the link, each example folder contains `input png file` and `ground truth glb file`. 
 
-### Rendering Data
-Alternatively, you can render data yourself. Our data preparation code lives in the `renderer` folder.
+## Evaluation
+This is the qualitative and qunatitative result in our paper.
+![Qualitative](images/qualitative_result.png)
+![Quantitative](images/quantitative_result.png)
 
-Our project depends on [ShapeNet](https://shapenet.org/) (Chang et al., '15), [ScanNet](https://github.com/ScanNet/ScanNet) (Dai et al. '16), and [Scan2CAD](https://github.com/skanti/Scan2CAD) (Avetisyan et al. '18) datasets. For ScanNet, we use ScanNet25k images which are provided as a zip file via the ScanNet download script.
-
-Once you get the data, check `renderer/env.sh` file for the locations of different datasets. The meanings of environment variables are described as inline comments in `env.sh`. 
-
-After editing `renderer/env.sh`, run the data generation script:
-```
-$ cd renderer
-$ sh run.sh
-```
-
-Please check `run.sh` to see how individual scripts are running for data preprocessing and feel free to customize the data pipeline!
-
-## Training and Evaluating Models
-Our training code lives in the `network` directory. Navigate to the `network/env.sh` and edit the environment variables. Make sure data directories are consistent with the ones locations downloaded and extracted folders. If you manually prepared data, make sure locations in `/network/env.sh` are consistent with the variables set in `renderer/env.sh`.
+In our paper, the evaluation part, we compared results of MultiDreamer(Ours) and SyncDreamer(Baseline). The code to obtain results for SyncDreamer is embedded in eval.sh 
 
 After you are done with `network/env.sh`, run the `run.sh` script to train a new model or evaluate an existing model based on the environment variables you set in `env.sh`:
 ```
