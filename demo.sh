@@ -1,8 +1,8 @@
 source ~/anaconda3/etc/profile.d/conda.sh
 
 # Main pipline
-INPUT_IMAGE="/root/MultiDreamer/data/input/1.png"
-OUTPUT_DIR="/root/MultiDreamer/data/merging_test/1/"
+INPUT_IMAGE="/root/MultiDreamer/data/assets/giraffe_and_flower/0_input_giraffe_and_flower.png"
+OUTPUT_DIR="/root/MultiDreamer/data/output/giraffe_and_flower/"
 
 # ---------- [1] Object Detachment ----------
 conda activate sam
