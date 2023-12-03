@@ -27,7 +27,30 @@ $ source setup.sh
 ## Running the Demo
 ![](images/example.png)
 
-We provide four sample input images in `data/assets` folder. The images should consist of exactly two objects. To run the demo, you first need to download data and config from this [Google Drive folder](https://drive.google.com/drive/folders/1uHwu3YmJnQm5I3HqxDYCuv_NbvvDndRX). `models` folder contains the several pre-trained models, while `data` folder contains images and dataset.
+We provide two sample input images in `data/assets` folder. If you want to test for your own example, the images should consist of exactly two objects. To run the demo, you first need to download pre-trained model checkpoint file for two models, which are SemanticSAM and SyncDreamer, from this [Google Drive folder](https://drive.google.com/drive/folders/1uHwu3YmJnQm5I3HqxDYCuv_NbvvDndRX). The path of downloaded files MUST follow below : 
+``plaintext
+프로젝트 루트/
+│
+├─ 데이터/
+│  ├─ 이미지/
+│  │  ├─ 사진1.jpg
+│  │  └─ 사진2.jpg
+│  │
+│  └─ 텍스트/
+│     └─ 데이터.txt
+│
+├─ 소스코드/
+│  ├─ 모듈1/
+│  │  ├─ 파일1.py
+│  │  └─ 파일2.py
+│  │
+│  └─ 모듈2/
+│     ├─ 파일3.py
+│     └─ 파일4.py
+│
+└─ 결과물/
+   ├─ 출력1.txt
+   └─ 출력2.csv
 
 Before you run 'demo.sh', you need to ckeck and set the pathes of input image and output directory in 'demo.sh':
 ```
