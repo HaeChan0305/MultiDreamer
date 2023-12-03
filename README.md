@@ -57,7 +57,8 @@ We provide 32 examples in this [Google Drive folder](https://drive.google.com/dr
 
 ## Evaluation
 This is the qualitative and qunatitative result in our paper.
-![Qualitative](images/qualitative_result.png)
+![Qualitative](images/qualitative_result.png)
+
 ![Quantitative](images/quantitative_result.png)
 
 In our paper, the evaluation part, we compared results of MultiDreamer(Ours) and SyncDreamer(Baseline). The code to obtain results for SyncDreamer is embedded in eval.sh 
