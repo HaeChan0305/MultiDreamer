@@ -44,11 +44,16 @@ MultiDreamer/models/
       └─ ViT-L-14.pt
 ```
 
-Before you run `demo.sh`, you shoud ckeck and modify the path of input image and output directory in `demo.sh`. If you need, make the `data/output/` directory :
+Before you run `demo.sh`, you shoud ckeck and modify the path of input image and output directory in `demo.sh`. If you need, make the `data/output/` directory. 
 ```
 INPUT_IMAGE="/MultiDreamer/data/assets/giraffe_and_flower/0_input_giraffe_and_flower.png"
 OUTPUT_DIR="/MultiDreamer/data/output/giraffe_and_flower/"
 ```
+Additionally, `demo.sh` file contain the code to obtain results of SyncDreamer that can be utilized to compare to our model in evaluation section. If you do not need this part, please comment it out :
+```
+python generate.py --input $INPUT_IMAGE --output_dir $OUTPUT_DIR --baseline --mesh
+```
+
 and then, you can run :
 ```
 $ bash demo.sh
@@ -62,7 +67,7 @@ We provide 32 examples in this [Google Drive folder](https://drive.google.com/dr
 This is the qualitative result presented in our paper.
 ![Qualitative](images/qualitative_result.png)
 
-In the evaluation part, we compared results of MultiDreamer(Ours) and SyncDreamer(Baseline). Then, we measured Chamfer Distance, Volume IoU, and F-Score for quantitative evaluation. The code to obtain results for both models and compute the metrics is in `eval/eval.sh`. You can run : 
+In the evaluation part, we compared results of MultiDreamer(Ours) and SyncDreamer(Baseline). We measured Chamfer Distance, Volume IoU, and F-Score for quantitative evaluation. The code to obtain results for both models and compute the metrics is in `eval/eval.sh`. You can run : 
 ```
 $ cd eval
 $ bash eval.sh
