@@ -1,0 +1,4 @@
+models/SemanticSAM/models/
+models/SyncDreamer/ckpt/
+
+__pycache__/
