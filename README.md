@@ -1,4 +1,4 @@
-# MultiDreamer: Generating 3D mesh from a Single-view Multi-objects Image
+# MultiDreamer: Generating 3D mesh from a Single-view Multi-object Image
 Code release of our paper [MultiDreamer](https://google.com). Check out our [paper](https://google.com), and [website](https://multidreamer-demo.web.app)!
 
 ## Abstract
