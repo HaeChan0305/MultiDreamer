@@ -27,35 +27,24 @@ $ source setup.sh
 ## Running the Demo
 ![](images/example.png)
 
-We provide two sample input images in `data/assets` folder. If you want to test for your own example, the images should consist of exactly two objects. To run the demo, you first need to download pre-trained model checkpoint file for two models, which are SemanticSAM and SyncDreamer, from this [Google Drive folder](https://drive.google.com/drive/folders/1uHwu3YmJnQm5I3HqxDYCuv_NbvvDndRX). The path of downloaded files MUST follow below : 
+We provide two sample input images in `data/assets` folder. If you want to test for your own example, the images should consist of exactly two objects. To run the demo, you first need to download pre-trained model checkpoint file for two models, which are SemanticSAM and SyncDreamer, from this [Google Drive folder](https://drive.google.com/drive/folders/1uHwu3YmJnQm5I3HqxDYCuv_NbvvDndRX). The pathes of the downloaded files MUST follow below : 
 ```plaintext
-프로젝트 루트/
+MultiDreamer/models
 │
-├─ 데이터/
-│  ├─ 이미지/
-│  │  ├─ 사진1.jpg
-│  │  └─ 사진2.jpg
-│  │
-│  └─ 텍스트/
-│     └─ 데이터.txt
+├─ SemanticSAM/
+│  └─ models/
+│     └─ swinl_only_sam_many2many.pth
 │
-├─ 소스코드/
-│  ├─ 모듈1/
-│  │  ├─ 파일1.py
-│  │  └─ 파일2.py
-│  │
-│  └─ 모듈2/
-│     ├─ 파일3.py
-│     └─ 파일4.py
-│
-└─ 결과물/
-   ├─ 출력1.txt
-   └─ 출력2.csv
-
-Before you run 'demo.sh', you need to ckeck and set the pathes of input image and output directory in 'demo.sh':
+└─ SyncDreamer/
+   └─ ckpt/
+      ├─ syncdreamer-pretrain.ckpt
+      └─ ViT-L-14.pt
 ```
-INPUT_IMAGE="/MultiDreamer/data/input/1.png"
-OUTPUT_DIR="/MultiDreamer/data/output/1/"
+
+Before you run 'demo.sh', you shoud ckeck and modify the path of input image and output directory in 'demo.sh'. If you need, make the output directory under the 'data/':
+```
+INPUT_IMAGE="/MultiDreamer/data/assets/giraffe_and_flower/0_input_giraffe_and_flower.png"
+OUTPUT_DIR="/MultiDreamer/data/output/giraffe_and_flower/"
 ```
 and then, you can run :
 ```
