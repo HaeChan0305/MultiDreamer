@@ -2,7 +2,7 @@
 Code release of our paper [MultiDreamer](https://google.com). Check out our [paper](https://google.com), and [website](https://multidreamer-demo.web.app)!
 
 ![](images/pipeline.png)
-Model Architecture of MultiDreamer
+
 
 ## Development Environment
 We use the following development environment for this project:
@@ -27,7 +27,7 @@ $ source setup.sh
 ## Running the Demo
 ![](images/example.png)
 
-We provide two sample input images in `data/assets` folder. If you want to test for your own example, the images should consist of exactly two objects. To run the demo, you first need to download pre-trained model checkpoint file for two models, which are SemanticSAM and SyncDreamer, from this [Google Drive folder](https://drive.google.com/drive/folders/1k5-QoS6CmK71r9jkc62LKpnxE6HhIGUU). The path of the downloaded files MUST follow below : 
+We provide two sample input images in the `data/assets` folder. If you want to test with your own example, the images should consist of exactly two objects. To run the demo, you first need to download the pre-trained model checkpoint files for two models, namely SemanticSAM and SyncDreamer, from this [Google Drive folder](https://drive.google.com/drive/folders/1k5-QoS6CmK71r9jkc62LKpnxE6HhIGUU). The path of the downloaded files MUST follow the structure below : 
 ```plaintext
 MultiDreamer/models/
 │
@@ -53,19 +53,19 @@ $ bash demo.sh
 
 ## Preparing Data
 ### Downloading Processed Data (Recommended)
-We provide 32 examples in this [Google Drive folder](https://drive.google.com/drive/folders/1k5-QoS6CmK71r9jkc62LKpnxE6HhIGUU). In the link, each example folder contains `input png file` and `ground truth glb file`. We recommand you to set the downloaded folder as `data/eval/`.
+We provide 32 examples in this [Google Drive folder](https://drive.google.com/drive/folders/1k5-QoS6CmK71r9jkc62LKpnxE6HhIGUU). In the link, each example folder contains `input png file` and `ground truth glb file`. We recommand setting the downloaded folder as `data/eval/`.
 
 ## Evaluation
-This is the qualitative presented in our paper.
+This is the qualitative result presented in our paper.
 ![Qualitative](images/qualitative_result.png)
 
-In the evaluation part, we compared results of MultiDreamer(Ours) and SyncDreamer(Baseline). Then, we measured Chamfer Distance, Volume IoU, and F-Score for quantitative evaluation. The code to obtain results for both models and compute the metrics in `eval/eval.sh`. You can run : 
+In the evaluation part, we compared results of MultiDreamer(Ours) and SyncDreamer(Baseline). Then, we measured Chamfer Distance, Volume IoU, and F-Score for quantitative evaluation. The code to obtain results for both models and compute the metrics is in `eval/eval.sh`. You can run : 
 ```
 $ cd eval
 $ bash eval.sh
 ```
 
-Finally, you can get the result like the below table. The value of each metric can be difference from the table, since they are computed from randomly sampled vertices in the infered mesh and the ground truth mesh.
+Finally, you can obtain the result like the table below. The values of each metric may differ from the table, as they are computed from randomly sampled vertices in the inferred mesh and the ground truth mesh.
 
 ![Quantitative](images/quantitative_result.png)
 
