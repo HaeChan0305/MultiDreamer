@@ -53,39 +53,22 @@ $ bash demo.sh
 
 ## Preparing Data
 ### Downloading Processed Data (Recommended)
-We provide 32 examples in this [Google Drive folder](https://drive.google.com/drive/folders/1uHwu3YmJnQm5I3HqxDYCuv_NbvvDndRX). In the link, each example folder contains `input png file` and `ground truth glb file`. 
+We provide 32 examples in this [Google Drive folder](https://drive.google.com/drive/folders/1uHwu3YmJnQm5I3HqxDYCuv_NbvvDndRX). In the link, each example folder contains `input png file` and `ground truth glb file`. We recommand you to set the downloaded folder as `data/eval/`.
 
 ## Evaluation
-This is the qualitative and qunatitative result in our paper.
+This is the qualitative presented in our paper.
 ![Qualitative](images/qualitative_result.png)
+
+In the evaluation part, we compared results of MultiDreamer(Ours) and SyncDreamer(Baseline). Then, we measured Chamfer Distance, Volume IoU, and F-Score for quantitative evaluation. The code to obtain results for both models and compute the metrics in `eval/eval.sh`. You can run : 
+```
+$ cd eval
+$ bash eval.sh
+```
+
+Finally, you can get the result like the below table. The value of each metric can be difference from the table, since they are computed from randomly sampled vertices in the infered mesh and the ground truth mesh.
 
 ![Quantitative](images/quantitative_result.png)
 
-In our paper, the evaluation part, we compared results of MultiDreamer(Ours) and SyncDreamer(Baseline). The code to obtain results for SyncDreamer is embedded in eval.sh 
-
-After you are done with `network/env.sh`, run the `run.sh` script to train a new model or evaluate an existing model based on the environment variables you set in `env.sh`:
-```
-$ cd network
-$ sh run.sh
-```
-
-### Replicating Experiments from the Main Paper
-Based on the configurations in `network/env.sh`, you can run different ablations from the paper. The default config will run the (final) experiment. You can do the following edits <b>cumulatively</b> for different experiments:
-
-1. For P+E+W+R, set `RETRIEVAL_MODE=resnet_resnet+image`
-2. For P+E+W, set `RETRIEVAL_MODE=nearest`
-3. For P+E, set `NOC_WEIGHTS=0`
-4. For P, set `E2E=0`
-
-## Resources
-To get the datasets and gain further insight regarding our implementation, we refer to the following datasets and open-source codebases:
-
-### Datasets and Metadata
-- https://shapenet.org/
-
-- http://www.scan-net.org/
-
-- https://github.com/skanti/Scan2CAD
 
 ### Libraries
 - https://pytorch.org/
@@ -97,6 +80,10 @@ To get the datasets and gain further insight regarding our implementation, we re
 - http://www.open3d.org/
 
 ### Projects
-- https://github.com/facebookresearch/meshrcnn
+- https://github.com/liuyuan-pal/SyncDreamer
 
-- https://github.com/xheon/JointEmbedding
+- https://github.com/UX-Decoder/Semantic-SAM
+
+- https://huggingface.co/runwayml/stable-diffusion-inpainting
+
+- https://github.com/isl-org/ZoeDepth
