@@ -1,7 +1,8 @@
 # MultiDreamer: Generating 3D mesh from a Single-view Multi-objects Image
 Code release of our paper [MultiDreamer](https://google.com). Check out our [paper](https://google.com), and [website](https://multidreamer-demo.web.app)!
 
-![](images/asdfa.jpg)
+![](images/pipeline.png)
+Model Architecture of MultiDreamer
 
 ## Development Environment
 We use the following development environment for this project:
@@ -24,7 +25,7 @@ $ source setup.sh
 
 
 ## Running the Demo
-![](network/assets/demo_out.jpg)
+![](images/example.png)
 
 We provide four sample input images in `data/assets` folder. The images should consist of exactly two objects. To run the demo, you first need to download data and config from this [Google Drive folder](https://drive.google.com/drive/folders/1uHwu3YmJnQm5I3HqxDYCuv_NbvvDndRX). `models` folder contains the several pre-trained models, while `data` folder contains images and dataset.
 
