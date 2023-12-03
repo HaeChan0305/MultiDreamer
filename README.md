@@ -29,7 +29,7 @@ $ source setup.sh
 
 We provide two sample input images in `data/assets` folder. If you want to test for your own example, the images should consist of exactly two objects. To run the demo, you first need to download pre-trained model checkpoint file for two models, which are SemanticSAM and SyncDreamer, from this [Google Drive folder](https://drive.google.com/drive/folders/1uHwu3YmJnQm5I3HqxDYCuv_NbvvDndRX). The pathes of the downloaded files MUST follow below : 
 ```plaintext
-MultiDreamer/models
+MultiDreamer/models/
 │
 ├─ SemanticSAM/
 │  └─ models/
@@ -41,7 +41,7 @@ MultiDreamer/models
       └─ ViT-L-14.pt
 ```
 
-Before you run 'demo.sh', you shoud ckeck and modify the path of input image and output directory in 'demo.sh'. If you need, make the output directory under the 'data/':
+Before you run `demo.sh`, you shoud ckeck and modify the path of input image and output directory in `demo.sh`. If you need, make the `data/output` directory :
 ```
 INPUT_IMAGE="/MultiDreamer/data/assets/giraffe_and_flower/0_input_giraffe_and_flower.png"
 OUTPUT_DIR="/MultiDreamer/data/output/giraffe_and_flower/"
